@@ -1,22 +1,8 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-// User.sync({force:true});
-
-// points the express var to the file below
-app.use(require('./middleware/headers'));
-
-// req is linked to api/test - test server connection 
-app.use('/api/test', function(req, res){
-	// app.js client gets this response 
-	res.send("Hello World");
-});
-
-app.listen(3000,function(){
-	console.log('app is listening on 3000');
-});
-
 var Sequelize = require('sequelize');
+
 var sequelize = new Sequelize('workoutlog', 'postgres', 'Godgives2011',{
 	host: 'localhost',
 	dialect: 'postgres'
@@ -30,6 +16,11 @@ sequelize.authenticate().then(
 		console.log('err');
 	}
 );
+
+var User = sequelize.define('user', {
+	username:Sequelize.STRING,
+	passwordhash:Sequelize.STRING,
+});
 
 //creates the table in postgres
 //matches the model we defined
@@ -64,9 +55,19 @@ app.post('/api/user', function(req, res){
 
 });
 
-var User = sequelize.define('user', {
-	username:Sequelize.STRING,
-	passwordhash:Sequelize.STRING,
+// User.sync({force:true});
+
+// points the express var to the file below
+app.use(require('./middleware/headers'));
+
+// req is linked to api/test - test server connection 
+app.use('/api/test', function(req, res){
+	// app.js client gets this response 
+	res.send("Hello World");
+});
+
+app.listen(3000,function(){
+	console.log('app is listening on 3000');
 });
 
 
