@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 	var test = $.ajax({
 		type: "GET",
+		// server app takes the request and sends the "hellow world" res.
 		url: "http://localhost:3000/api/test"
 	});
 	test.done(function(data){
