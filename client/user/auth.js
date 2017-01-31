@@ -12,6 +12,7 @@ $(document).ready(function(){
 					password: password 
 				}
 			};
+	// }
 			// signup post 
 			var signup = $.ajax({
 				type: "POST",
