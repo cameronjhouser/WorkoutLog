@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -8,6 +10,7 @@ User.sync(); /*sync({force: true}); Danger: THIS WILL DROP TABLE each time the a
 app.use(bodyParser.json());
 
 app.use(require('./middleware/headers'));
+app.use(require('./middleware/validate-sessions'));
 
 app.use('/api/user', require('./routes/user'));
 app.use('/api/login', require('./routes/session'));
