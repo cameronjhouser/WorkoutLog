@@ -50,6 +50,21 @@
 					</select>
 				<button id="def-save" class="btn btn-primary">Save</button>				
 			</dir>
+			<!-- Results -->
+			<dir class="tab-pane" id="log">
+				<h2>Log!</h2>
+					<label for="log-resultsave">Result</label>
+					<input type="text" class="form-control" placeholder="Enter results here" id="log-resultsave">	
+					<label for="log-workoutselect">Workout Select</label>
+					<select class="form-control" id="log-workoutselect">
+						<option>Time</option>
+						<option>Weight</option>
+						<option>Reps</option>					
+					</select>
+					<label for="log-notesave">Notes</label> 
+					<textarea class="form-control" id="log-notesave" rows="3"></textarea>
+				<button id="log-save" class="btn btn-primary">Save</button>				
+			</dir>
 		</div>
 	</div>
 
@@ -104,6 +119,8 @@
 	<script type="text/javascript" src="./app.js"></script>
 	<script src="./user/auth.js"></script>
 	<script src="./workouts/define.js"></script>
+	<!-- challenge -->
+	<script src="./workouts/log.js"></script>
 
 </body>
 
