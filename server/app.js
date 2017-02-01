@@ -7,8 +7,7 @@ var sequelize = require('./db.js');
 
 var User = sequelize.import('./models/user');
 
-// User.sync(); 
-/*sync({force: true}); Danger: THIS WILL DROP TABLE each time the app starts*/
+//User.sync({force: true});// Danger: THIS WILL DROP TABLE each time the app starts
 sequelize.sync();
 app.use(bodyParser.json());
 
