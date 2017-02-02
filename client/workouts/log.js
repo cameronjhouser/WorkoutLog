@@ -4,7 +4,7 @@ $(function(){
 			workouts: [],
 
 			setDefinitions: function(){
-				var def = WorkoutLog.definition.userDefinitions;
+				var defs = WorkoutLog.definition.userDefinitions;
 				var len = defs.length;
 				var opts;
 				for (var i =0; i<len; i++){

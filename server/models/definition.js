@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes){
 
 	return sequelize.define('definition',{
 		description:DataTypes.STRING,
-		logTypes:DataTypes.STRING, //by time, reps, weight
+		logType:DataTypes.STRING, //by time, reps, weight
 
 		owner:DataTypes.INTEGER 
 	},{
