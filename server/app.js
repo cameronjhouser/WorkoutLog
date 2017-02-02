@@ -5,12 +5,16 @@ var app = express();
 var bodyParser = require('body-parser');
 var sequelize = require('./db');
 
-sequelize.sync(); // tip: {force: true} for resetting tables
+sequelize.sync(); //{force: true} tip: {force: true} for resetting tables
 
 app.use(bodyParser.json());
 
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-sessions'));
+
+app.listen(3000, function(){
+	console.log('App is listening on 3000.')
+});
 
 
 app.use('/api/user', require('./routes/user'));
@@ -21,6 +25,6 @@ app.use('/api/test', function(req, res){
 	res.send("Hello World");
 });
 
-app.listen(3000, function(){
-	console.log('App is listening on 3000.')
-});
+
+
+
