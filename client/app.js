@@ -5,9 +5,9 @@ $(function(){
 
 		var setAuthHeader = function(sessionToken){
 			window.localStorage.setItem("sessionToken", sessionToken);
-			// Set the authorzation header 
+			// Set the authorization header 
 			// This can be done on individual calls 
-			// here we shocase ajaxSetup as a global tool 
+			// here we showcase ajaxSetup as a global tool 
 			$.ajaxSetup({
 				"headers": {
 					"Authorization": sessionToken
@@ -23,6 +23,7 @@ $(function(){
 
 	})(jQuery);
 
+
 // IF ERROR CHECK THE TAB For ""
 	// ensure .disabled aren't clickable
 	$('.nav-tabs a[data-toggle="tab"]').on("click", function(e){
@@ -34,6 +35,7 @@ $(function(){
 
 	});
 // bind tab change events
+// bind enter keyup
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
 		var target = $(e.target).attr("href"); // activate tab
 		if (target === "#log") {
@@ -44,8 +46,8 @@ $(function(){
 			WorkoutLog.log.setHistory
 		}
 	});
-// bind enter keyup
-	$(document).on("keypress", function(e){
+
+		$(document).on("keypress", function(e){
 		if (e.which === 13) { // enter key
 			if ($("#signup-modal").is(":visible")){
 				$("#signup").trigger("click");
