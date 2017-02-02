@@ -6,10 +6,10 @@ var Definition = sequelize.import('../models/definition');
 
 router.post('/', function(req, res) {
     // req has some body properties that have a username and pwd
-    var description = req.body.log.description; 
+    var description = req.body.log.desc; 
     var result = req.body.log.result; 
     var user = req.user;
-    var definition = req.body.log.def;
+    var definition = req.body.log.defs;
    
 
     // Use our sequelize model to create log
@@ -18,7 +18,7 @@ router.post('/', function(req, res) {
 	    	description: description,
 	    	result: result,
 	    	owner: user.id,
-	    	def: definition
+	    	defs: definition
 	    })
 	    .then(
 	    	function createSuccess(log) {

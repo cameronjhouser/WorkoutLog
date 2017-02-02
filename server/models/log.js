@@ -2,9 +2,9 @@
 module.exports = function(sequelize, DataTypes){
 	return sequelize.define('log',{
 			description: DataTypes.STRING,
-			results: DataTypes.STRING,
+			result: DataTypes.STRING,
 			owner: DataTypes.INTEGER,
-			def: DataTypes.INTEGER 
+			defs: DataTypes.INTEGER 
 			},{ 
 	});
 };
